@@ -16,9 +16,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: build image in docker
-        run: doker build -t sairampandu/ss .
+        run: docker build -t sairampandu/ss .
       - name: push to  docker hub
-        run: doker push sairampandu/ss
+        run: docker push sairampandu/ss
       - name: Execute remote SSH commands using password
         uses: appleboy/ssh-action@v1
         with:
